@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan's Road School | Driving Lessons Adelaide</title>
+<meta name="description" content="Learn to drive with Ryan Soraki — friendly, patient, and professional driving lessons across Adelaide, SA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yellow: #F5C842;
+    --yellow-dark: #C99B0A;
+    --yellow-light: #FEF9E6;
+    --navy: #1B2D4F;
+    --navy-mid: #2E4878;
+    --slate: #4A5568;
+    --light: #F8F7F3;
+    --white: #FFFFFF;
+    --green: #2D8C5C;
+    --green-light: #E6F5EE;
+    --red: #D64040;
+    --border: #E2DDD5;
+    --radius: 14px;
+    --radius-lg: 22px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--light);
+    color: var(--navy);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 1.5px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: var(--slate);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--navy); }
+
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: none;
+  }
+
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--navy);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 2px solid var(--navy);
+  }
+
+  .btn-lg { padding: 0.85rem 2rem; font-size: 1.05rem; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: var(--yellow);
+    opacity: 0.08;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 30%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--yellow);
+    opacity: 0.06;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(245, 200, 66, 0.15);
+    color: var(--yellow);
+    border: 1px solid rgba(245, 200, 66, 0.35);
+    border-radius: 999px;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .hero-trust {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trust-num {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .trust-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 2rem; }
+
+  .section-inner { max-width: 860px; margin: 0 auto; }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--yellow-light);
+    color: var(--yellow-dark);
+    border-radius: 999px;
+    padding: 0.25rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .section-heading {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--navy);
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--slate);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-photo {
+    background: var(--yellow-light);
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--yellow-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px dashed var(--yellow);
+  }
+
+  .about-photo svg { opacity: 0.5; }
+
+  .about-points { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+
+  .about-point {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+  }
+
+  .point-icon {
+    width: 36px; height: 36px; min-width: 36px;
+    background: var(--yellow-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .point-text strong { display: block; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+  .point-text span { font-size: 0.9rem; color: var(--slate); }
+
+  /* ── LESSONS ── */
+  #lessons { background: var(--light); }
+
+  .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .lesson-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .lesson-card:hover { border-color: var(--yellow); transform: translateY(-3px); }
+
+  .lesson-icon {
+    width: 48px; height: 48px;
+    background: var(--yellow);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .lesson-card h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 0.4rem; }
+  .lesson-card p { font-size: 0.88rem; color: var(--slate); line-height: 1.5; }
+
+  .pricing-note {
+    margin-top: 2rem;
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pricing-note p { font-size: 1rem; font-weight: 600; }
+  .pricing-note span { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+  /* ── BOOKING ── */
+  #booking { background: var(--white); }
+
+  .booking-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    background: var(--light);
+    border-radius: 999px;
+    padding: 5px;
+    width: fit-content;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--slate);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn.active {
+    background: var(--white);
+    color: var(--navy);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Booking form */
+  .booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 640px;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--navy);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(245,200,66,0.2);
+  }
+
+  .form-group textarea { resize: vertical; min-height: 90px; }
+
+  .form-submit {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .form-note { font-size: 0.82rem; color: var(--slate); }
+
+  /* Calendar */
+  .calendar-wrapper {
+    max-width: 520px;
+    background: var(--light);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+  }
+
+  .cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .cal-header h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; }
+
+  .cal-nav {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--navy);
+    transition: background 0.15s;
+  }
+
+  .cal-nav:hover { background: var(--yellow-light); }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+
+  .cal-day-name {
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0;
+  }
+
+  .cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: transparent;
+    border: none;
+    color: var(--navy);
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .cal-day:hover:not(.empty):not(.past) { background: var(--yellow-light); color: var(--navy); }
+  .cal-day.today { background: var(--yellow); color: var(--navy); }
+  .cal-day.selected { background: var(--navy); color: var(--white); }
+  .cal-day.has-slot { position: relative; }
+  .cal-day.has-slot::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  .cal-day.past { color: #BCBBB5; cursor: default; }
+  .cal-day.empty { cursor: default; }
+
+  .time-slots {
+    margin-top: 1.25rem;
+    display: none;
+  }
+
+  .time-slots.visible { display: block; }
+
+  .time-slots h4 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .slots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .slot-btn {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 0.45rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--navy);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+
+  .slot-btn:hover { border-color: var(--yellow); background: var(--yellow-light); }
+  .slot-btn.selected-slot { background: var(--yellow); border-color: var(--yellow); }
+
+  .booking-confirm {
+    margin-top: 1.25rem;
+    display: none;
+  }
+
+  .booking-confirm.visible { display: block; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--light); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .contact-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border: 1.5px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px; min-width: 44px;
+    background: var(--yellow-light);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .contact-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--slate); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .contact-card p { font-size: 1rem; font-weight: 700; color: var(--navy); }
+  .contact-card span { font-size: 0.82rem; color: var(--slate); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+  }
+
+  footer strong { color: var(--white); }
+
+  /* ── ALERT ── */
+  .alert {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .alert.success { background: var(--green-light); color: var(--green); border: 1px solid #A8D9C0; display: block; }
+  .alert.error { background: #FDECEC; color: var(--red); border: 1px solid #F5BEBE; display: block; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .about-grid, .contact-grid, .booking-form { grid-template-columns: 1fr; }
+    .booking-form .form-group.full { grid-column: 1; }
+    .hero-trust { gap: 1.5rem; }
+    .pricing-note { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-mark">🚗</span>
+    Ryan's Road School
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#lessons">Lessons</a></li>
+    <li><a href="#booking">Booking</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#booking" class="btn btn-primary">Book a lesson</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">📍 Serving Adelaide, SA</div>
+    <h1>Your <em>friendly</em> guide<br>to the open road</h1>
+    <p>Learn to drive with Ryan Soraki — patient, professional, and passionate about helping every student feel confident behind the wheel.</p>
+    <div class="hero-ctas">
+      <a href="#booking" class="btn btn-primary btn-lg">Book your first lesson</a>
+      <a href="#about" class="btn btn-outline btn-lg" style="color:#fff; border-color:rgba(255,255,255,0.4);">Meet Ryan</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <span class="trust-num">★ 5.0</span>
+        <span class="trust-label">Student rating</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">100%</span>
+        <span class="trust-label">Accredited instructor</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-num">Adel.</span>
+        <span class="trust-label">Wide area coverage</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo">
+        <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo coming soon</span>
+      </div>
+      <div>
+        <div class="section-tag">About Ryan</div>
+        <h2 class="section-heading">Hi, I'm Ryan — your driving instructor</h2>
+        <p style="color: var(--slate); margin-bottom: 1rem;">I started Ryan's Road School because I believe learning to drive should be a positive, empowering experience. I take the time to understand each student's pace and tailor every lesson so you actually <em>enjoy</em> the process.</p>
+        <p style="color: var(--slate);">Based in Adelaide and passionate about road safety, I'm fully accredited and committed to making sure every student I teach feels calm, confident, and ready.</p>
+        <div class="about-points">
+          <div class="about-point">
+            <div class="point-icon">🎓</div>
+            <div class="point-text">
+              <strong>Fully accredited instructor</strong>
+              <span>Licensed and registered with the relevant South Australian authorities</span>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="point-icon">🤝</div>
+            <div class="point-text">
+              <strong>Patient & encouraging</strong>
+              <span>No pressure, no rushing — just genuine support for every student</span>
+            </div>
+          </div>
+          <div class="about-point">
+            <div class="point-icon">📍</div>
+            <div class="point-text">
+              <strong>All across Adelaide</strong>
+              <span>Lessons available across a wide range of suburbs — just ask!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS -->
+<section id="lessons">
+  <div class="section-inner">
+    <div class="section-tag">What I offer</div>
+    <h2 class="section-heading">Lessons for every stage</h2>
+    <p class="section-sub">Whether you've never touched a steering wheel or just need a confidence boost, I've got a lesson that's right for you.</p>
+    <div class="lessons-grid">
+      <div class="lesson-card">
+        <div class="lesson-icon">🟢</div>
+        <h3>First-timer lessons</h3>
+        <p>Brand new to driving? We'll start from scratch — no experience needed. I'll walk you through everything step by step in a calm, relaxed environment.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-icon">📋</div>
+        <h3>Log book hours support</h3>
+        <p>Building up your 75 hours? I'll help you get quality supervised driving time and make sure you're developing great habits along the way.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-icon">✅</div>
+        <h3>Test preparation</h3>
+        <p>Ready to sit your licence test? We'll go through exactly what the examiner looks for and run through practice drives on the actual test routes.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-icon">🔄</div>
+        <h3>Refresher lessons</h3>
+        <p>Been off the road for a while or feeling nervous? Refresher lessons help you rebuild confidence at your own pace — no judgement, ever.</p>
+      </div>
+    </div>
+    <div class="pricing-note">
+      <div>
+        <p>Lesson pricing — tailored to you</p>
+        <span>Get in touch for a quote based on your needs and location.</span>
+      </div>
+      <a href="#booking" class="btn btn-primary">Enquire now</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="section-inner">
+    <div class="section-tag">Ready to get started?</div>
+    <h2 class="section-heading">Book a lesson</h2>
+    <p class="section-sub">Pick a time that works for you, or send an enquiry and Ryan will get back to you shortly.</p>
+
+    <div class="booking-tabs">
+      <button class="tab-btn active" onclick="switchTab('calendar')">📅 Pick a time</button>
+      <button class="tab-btn" onclick="switchTab('enquiry')">✉️ Send an enquiry</button>
+    </div>
+
+    <!-- CALENDAR TAB -->
+    <div class="tab-panel active" id="tab-calendar">
+      <div class="calendar-wrapper">
+        <div class="cal-header">
+          <button class="cal-nav" onclick="changeMonth(-1)">‹</button>
+          <h3 id="cal-title"></h3>
+          <button class="cal-nav" onclick="changeMonth(1)">›</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+
+        <div class="time-slots" id="time-slots">
+          <h4 id="slots-title"></h4>
+          <div class="slots-grid" id="slots-grid"></div>
+        </div>
+
+        <div class="booking-confirm" id="booking-confirm">
+          <div style="background: var(--yellow-light); border: 1.5px solid var(--yellow); border-radius: var(--radius); padding: 1.25rem; margin-top: 1rem;">
+            <p style="font-weight: 800; color: var(--navy); margin-bottom: 0.5rem;">🎉 Almost there!</p>
+            <p id="confirm-text" style="font-size: 0.9rem; color: var(--slate); margin-bottom: 1rem;"></p>
+            <input type="text" id="confirm-name" placeholder="Your name" style="width:100%; font-family:inherit; font-size:0.9rem; padding:0.6rem 0.8rem; border:1.5px solid var(--border); border-radius:10px; margin-bottom:0.5rem; outline:none;">
+            <input type="tel" id="confirm-phone" placeholder="Your phone number" style="width:100%; font-family:inherit; font-size:0.9rem; padding:0.6rem 0.8rem; border:1.5px solid var(--border); border-radius:10px; margin-bottom:0.75rem; outline:none;">
+            <button class="btn btn-primary" style="width:100%;" onclick="confirmBooking()">Confirm booking request</button>
+          </div>
+          <div id="booking-alert"></div>
+        </div>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--slate); margin-top: 1rem;">
+        ℹ️ Booking requests are confirmed by Ryan directly. You'll hear back within 24 hours.
+      </p>
+    </div>
+
+    <!-- ENQUIRY TAB -->
+    <div class="tab-panel" id="tab-enquiry">
+      <form class="booking-form" onsubmit="submitEnquiry(event)">
+        <div class="form-group">
+          <label for="fname">First name</label>
+          <input type="text" id="fname" placeholder="e.g. Sarah" required>
+        </div>
+        <div class="form-group">
+          <label for="lname">Last name</label>
+          <input type="text" id="lname" placeholder="e.g. Johnson" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" placeholder="04XX XXX XXX" required>
+        </div>
+        <div class="form-group">
+          <label for="lesson-type">What type of lesson?</label>
+          <select id="lesson-type">
+            <option value="">Select a lesson type...</option>
+            <option>First-timer / complete beginner</option>
+            <option>Log book hours support</option>
+            <option>Test preparation</option>
+            <option>Refresher lesson</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="suburb">Your suburb</label>
+          <input type="text" id="suburb" placeholder="e.g. Norwood">
+        </div>
+        <div class="form-group full">
+          <label for="message">Anything else Ryan should know?</label>
+          <textarea id="message" placeholder="e.g. I've had a few lessons before, I'm nervous about roundabouts..."></textarea>
+        </div>
+        <div class="form-submit full">
+          <button type="submit" class="btn btn-primary btn-lg">Send enquiry</button>
+          <span class="form-note">Usually replied to within 24 hours</span>
+        </div>
+        <div id="enquiry-alert" class="full"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get in touch</div>
+    <h2 class="section-heading">Contact Ryan</h2>
+    <p class="section-sub">Prefer to reach out directly? Ryan's happy to hear from you.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <div>
+          <h3>Phone</h3>
+          <p>04XX XXX XXX</p>
+          <span>Mon–Sat, 8am – 6pm</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <h3>Email</h3>
+          <p>ryan@ryansroadschool.com.au</p>
+          <span>We'll reply within 24 hours</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h3>Location</h3>
+          <p>Adelaide, South Australia</p>
+          <span>Lessons across the greater Adelaide area</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <h3>Availability</h3>
+          <p>Mon – Sat</p>
+          <span>Morning, afternoon & evening slots available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="yr"></span> <strong>Ryan's Road School</strong> · Adelaide, SA · All rights reserved</p>
+  <p style="margin-top: 0.4rem;">Built with ❤️ — Driving confidence one lesson at a time.</p>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// ── TAB SWITCHING ──
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach((b,i) => {
+    b.classList.toggle('active', (tab === 'calendar' && i === 0) || (tab === 'enquiry' && i === 1));
+  });
+  document.getElementById('tab-calendar').classList.toggle('active', tab === 'calendar');
+  document.getElementById('tab-enquiry').classList.toggle('active', tab === 'enquiry');
+}
+
+// ── CALENDAR ──
+const today = new Date();
+let viewYear = today.getFullYear();
+let viewMonth = today.getMonth();
+let selectedDate = null;
+let selectedSlot = null;
+
+const availableSlots = {
+  1: ['9:00 AM','10:00 AM','2:00 PM'],
+  3: ['8:00 AM','11:00 AM','3:00 PM','4:00 PM'],
+  5: ['9:00 AM','1:00 PM'],
+  8: ['10:00 AM','2:00 PM','4:00 PM'],
+  10: ['8:00 AM','9:00 AM','3:00 PM'],
+  12: ['11:00 AM','2:00 PM'],
+  15: ['9:00 AM','10:00 AM','1:00 PM','4:00 PM'],
+  17: ['8:00 AM','3:00 PM'],
+  19: ['9:00 AM','2:00 PM','4:00 PM'],
+  22: ['10:00 AM','11:00 AM','3:00 PM'],
+  24: ['9:00 AM','1:00 PM','4:00 PM'],
+  26: ['8:00 AM','10:00 AM','2:00 PM'],
+  29: ['9:00 AM','3:00 PM'],
+};
+
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+function renderCalendar() {
+  document.getElementById('cal-title').textContent = months[viewMonth] + ' ' + viewYear;
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+
+  days.forEach(d => {
+    const el = document.createElement('div');
+    el.className = 'cal-day-name';
+    el.textContent = d;
+    grid.appendChild(el);
+  });
+
+  const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+  const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const el = document.createElement('button');
+    el.className = 'cal-day empty';
+    grid.appendChild(el);
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const el = document.createElement('button');
+    const dateObj = new Date(viewYear, viewMonth, d);
+    const isToday = d === today.getDate() && viewMonth === today.getMonth() && viewYear === today.getFullYear();
+    const isPast = dateObj < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const hasSlots = availableSlots[d] && !isPast;
+    const isSelected = selectedDate && selectedDate.d === d && selectedDate.m === viewMonth && selectedDate.y === viewYear;
+
+    el.className = 'cal-day' +
+      (isToday ? ' today' : '') +
+      (isPast ? ' past' : '') +
+      (hasSlots ? ' has-slot' : '') +
+      (isSelected ? ' selected' : '');
+
+    el.textContent = d;
+    el.disabled = isPast;
+
+    if (!isPast) {
+      el.onclick = () => selectDay(d);
+    }
+    grid.appendChild(el);
+  }
+}
+
+function selectDay(d) {
+  selectedDate = { d, m: viewMonth, y: viewYear };
+  selectedSlot = null;
+  renderCalendar();
+
+  const slotsEl = document.getElementById('time-slots');
+  const confirmEl = document.getElementById('booking-confirm');
+  confirmEl.classList.remove('visible');
+  document.getElementById('booking-alert').innerHTML = '';
+
+  const slots = availableSlots[d];
+  if (slots) {
+    const dateStr = months[viewMonth] + ' ' + d + ', ' + viewYear;
+    document.getElementById('slots-title').textContent = 'Available times for ' + dateStr;
+    const grid = document.getElementById('slots-grid');
+    grid.innerHTML = '';
+    slots.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'slot-btn';
+      btn.textContent = s;
+      btn.onclick = () => selectSlot(s, btn, dateStr);
+      grid.appendChild(btn);
+    });
+    slotsEl.classList.add('visible');
+  } else {
+    slotsEl.classList.remove('visible');
+  }
+}
+
+function selectSlot(slot, btn, dateStr) {
+  selectedSlot = slot;
+  document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected-slot'));
+  btn.classList.add('selected-slot');
+
+  const confirmEl = document.getElementById('booking-confirm');
+  document.getElementById('confirm-text').textContent =
+    'You\'re requesting a lesson on ' + dateStr + ' at ' + slot + '. Fill in your details and Ryan will confirm within 24 hours.';
+  confirmEl.classList.add('visible');
+}
+
+function confirmBooking() {
+  const name = document.getElementById('confirm-name').value.trim();
+  const phone = document.getElementById('confirm-phone').value.trim();
+  const alertEl = document.getElementById('booking-alert');
+
+  if (!name || !phone) {
+    alertEl.innerHTML = '<div class="alert error">Please fill in your name and phone number.</div>';
+    return;
+  }
+
+  alertEl.innerHTML = '<div class="alert success">✅ Booking request sent! Ryan will be in touch within 24 hours to confirm your lesson.</div>';
+  document.getElementById('confirm-name').value = '';
+  document.getElementById('confirm-phone').value = '';
+}
+
+function changeMonth(dir) {
+  viewMonth += dir;
+  if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+  if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+  selectedDate = null;
+  selectedSlot = null;
+  document.getElementById('time-slots').classList.remove('visible');
+  document.getElementById('booking-confirm').classList.remove('visible');
+  renderCalendar();
+}
+
+renderCalendar();
+
+// ── ENQUIRY FORM ──
+function submitEnquiry(e) {
+  e.preventDefault();
+  const alertEl = document.getElementById('enquiry-alert');
+  alertEl.innerHTML = '<div class="alert success">✅ Thanks! Your enquiry has been sent. Ryan will be in touch within 24 hours.</div>';
+  e.target.reset();
+}
+</script>
+</body>
+</html>
